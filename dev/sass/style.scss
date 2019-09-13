@@ -85,11 +85,25 @@ html, body {
   main {
     @include dimensions(100%, auto);
 
-    .about-me,
-    .contact-me {
+    .info-section {
       @include dimensions(100%, auto);
       @include indentations(0, 1em);
       box-sizing: border-box;
+      color: $white;
+      background-color: $black-blue;
+
+      .info-section__title {
+        font-family: serif;
+        text-align: center;
+      }
+    }
+
+    .projects {
+      background-color: $white;
+
+      .info-section__title {
+        color: $black;
+      }
     }
   }
 
