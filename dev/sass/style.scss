@@ -1,6 +1,5 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
-// @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 html, body {
   @include dimensions(100%, 100%);
@@ -10,7 +9,7 @@ html, body {
 .container {
   @include dimensions(100%, auto);
   font: {
-    family: 'Roboto', sans-serif;
+    family: sans-serif;
     size: 16px;
   }
   background-color: $black;
