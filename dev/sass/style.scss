@@ -1,0 +1,13 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+html, body {
+  @include dimensions(100%, 100%);
+  @include indentations(0, 0);
+}
+
+body {
+  img {
+    border: none;
+  }
+}
