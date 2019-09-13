@@ -92,11 +92,20 @@ html, body {
       color: $white;
       background-color: $black-blue;
 
-      .info-section__title {
-        color: $brown;
-        font-family: serif;
+      .info-section__content {
+        @include dimensions(70%, 80%);
+        max-width: 70em;
+        margin: 0 auto;
+        position: relative;
+
+      }
+    }
         text-align: center;
       }
+    }
+
+    .projects, .contact-me {
+      height: 30em; /* remove later */
     }
 
     .projects {
