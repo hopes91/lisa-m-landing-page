@@ -105,6 +105,18 @@ html, body {
   }
 
   footer {
-    @include dimensions(100%, auto);
+    @include dimensions(100%, 4em);
+    position: absolute;
+    // bottom: 0;
+
+    .copyright {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+
+      p {
+        font-weight: bold;
+      }
+    }
   }
 }
