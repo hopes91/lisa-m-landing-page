@@ -1,13 +1,84 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 html, body {
   @include dimensions(100%, 100%);
   @include indentations(0, 0);
 }
 
-body {
+.container {
+  @include dimensions(100%, auto);
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 16px;
+  }
+  background-color: $black;
+  position: relative;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+  }
+
   img {
     border: none;
+  }
+
+  .nav {
+    @include dimensions(100%, 4em);
+    font-weight: bold;
+    text-align: right;
+    background-color: $white;
+
+    .nav__link {
+      @include indentations(0, 1.6em 1em);
+      font-size: 0.9em;
+      line-height: 1.5;
+      color: $black;
+      text-transform: uppercase;
+    }
+  }
+
+  header {
+    @include dimensions(100%, 100vh);
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      @include dimensions(100%, 100%);
+      content: '';
+      background: url('images/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg') top right/cover no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    h1 {
+      font: {
+        family: serif;
+        size: 5em;
+      }
+      color: $white;
+      text-align: center;
+    }
+  }
+
+  main {
+    @include dimensions(100%, auto);
+
+    .about-me,
+    .contact-me {
+      @include dimensions(100%, auto);
+      @include indentations(0, 1em);
+      box-sizing: border-box;
+    }
+  }
+
+  footer {
+    @include dimensions(100%, auto);
   }
 }
