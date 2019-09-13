@@ -98,9 +98,57 @@ html, body {
         margin: 0 auto;
         position: relative;
 
+        .info-section__title {
+          margin-bottom: 0.7em;
+          color: $brown;
+          font-family: serif;
+          text-align: center;
+        }
+
+        hr {
+          width: 3em;
+          margin: 0 auto 3em auto;
+          border: 1px solid $brown;
+        }
       }
     }
+
+    .about-me {
+      .about-me__text,
+      .about-me__photo {
+        @include dimensions(45%, auto);
+        max-width: 30em;
+        min-height: 23em;
+      }
+
+      .about-me__text {
+        display: inline-block;
+        text-align: justify;
+
+        p {
+          margin: 0 0 1em 0;
+        }
+      }
+
+      span {
+        @include dimensions(0.1em, 20em);
+        margin: auto;
+        display: inline-block;
+        background-color: $brown;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .about-me__photo {
         text-align: center;
+        float: right;
+
+        img {
+          @include dimensions(17em, auto);
+        }
       }
     }
 
