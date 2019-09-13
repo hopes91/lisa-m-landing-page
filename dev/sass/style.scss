@@ -93,6 +93,7 @@ html, body {
       background-color: $black-blue;
 
       .info-section__title {
+        color: $brown;
         font-family: serif;
         text-align: center;
       }
@@ -100,10 +101,6 @@ html, body {
 
     .projects {
       background-color: $white;
-
-      .info-section__title {
-        color: $black;
-      }
     }
   }
 
