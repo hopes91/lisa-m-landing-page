@@ -23,15 +23,8 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src([
-      'node_modules/@babel/polyfill/dist/polyfill.js',
-      './dev/js/*.js'
-    ])
-    .pipe(cache('js'))
-    .pipe(babel({ presets: ['@babel/preset-env'] }))
-    .pipe(remember('js'))
-    .pipe(concat('script.js'))
-    .pipe(uglify())
+  return gulp.src('./dev/js/**/*.js')
+    .pipe(webpackStream(require('./webpack.config.js')))
     .pipe(gulp.dest('./public'));
 });
 
@@ -57,7 +50,7 @@ gulp.task('watch', function() {
     remember.forget('css', event.path);
   });
 
-  const jsWatcher = gulp.watch('./dev/js/*.js', gulp.series('js'));
+  const jsWatcher = gulp.watch('./dev/js/**/*.js', gulp.series('js'));
 
   jsWatcher.on('unlink', function(event) {
     delete cache.caches['js'][event.path];
@@ -69,7 +62,6 @@ gulp.task('watch', function() {
 
 gulp.task('server', function() {
   browserSync.init({ server: './public' });
-
   browserSync.watch('./public/**/*.*').on('change', browserSync.reload);
 });
 
