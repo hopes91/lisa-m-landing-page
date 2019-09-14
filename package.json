@@ -15,13 +15,12 @@
     "del": "^5.1.0",
     "gulp-babel": "^8.0.0",
     "gulp-cached": "^1.1.1",
+    "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
     "gulp-remember": "^1.0.1",
     "gulp-sass": "^4.0.2",
-    "gulp-uglifycss": "^1.1.0",
-    "terser-webpack-plugin": "^2.0.1",
-    "webpack": "^4.40.1",
-    "webpack-stream": "^5.2.1"
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0"
