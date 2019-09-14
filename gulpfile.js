@@ -7,18 +7,18 @@ const autoprefixer = require('autoprefixer');
 const uglifycss = require('gulp-uglifycss');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const cached = require('gulp-cached');
+const cache = require('gulp-cached');
 const remember = require('gulp-remember');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
 gulp.task('css', function() {
   return gulp.src('./dev/sass/**/*.scss')
-    .pipe(cached('css'))
+    .pipe(cache('css'))
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
     .pipe(remember('css'))
-    .pipe(uglifycss({"uglyComments": true}))
+    .pipe(uglifycss({ "uglyComments": true }))
     .pipe(gulp.dest('./public'));
 });
 
@@ -29,7 +29,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('assets', function() {
-  return gulp.src('./dev/assets/**/*.*', {since: gulp.lastRun('assets')})
+  return gulp.src('./dev/assets/**/*.*', { since: gulp.lastRun('assets' )})
     .pipe(gulp.dest('./public'));
 });
 
