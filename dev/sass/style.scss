@@ -1,5 +1,6 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap&subset=latin-ext');
 
 html, body {
   @include dimensions(100%, 100%);
@@ -9,7 +10,7 @@ html, body {
 .container {
   @include dimensions(100%, auto);
   font: {
-    family: sans-serif;
+    family: 'Rubik', sans-serif;
     size: 16px;
   }
   background-color: $black-blue;
