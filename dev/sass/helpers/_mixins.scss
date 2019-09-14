@@ -1,11 +1,11 @@
 @mixin dimensions($width, $height) {
- width: $width;
- height: $height;
+  width: $width;
+  height: $height;
 }
 
 @mixin indentations($margin, $padding) {
- margin: $margin;
- padding: $padding;
+  margin: $margin;
+  padding: $padding;
 }
 
 @mixin respond-to($media) {

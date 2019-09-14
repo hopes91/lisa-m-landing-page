@@ -99,9 +99,12 @@ html, body {
         position: relative;
 
         .info-section__title {
-          margin-bottom: 0.7em;
+          margin: 0.5em 0 0.8em 0;
           color: $brown;
-          font-family: serif;
+          font: {
+            family: serif;
+            size: 1.8em;
+          }
           text-align: center;
         }
 
