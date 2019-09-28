@@ -157,7 +157,7 @@ html, body {
 
       .info-button_bottom {
         @extend .info-button;
-        @include dimensions(73em, auto);
+        @include dimensions(40em, auto);
         margin: 2em auto;
         padding: 1.5em;
         display: block;
