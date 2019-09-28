@@ -61,11 +61,10 @@ html, body {
 
     .logo {
       @include dimensions(7em, 3em);
-      margin: 0 auto 10% auto;
-      color: $white;
+      margin: 0 auto 7% auto;
       border: 1px solid $white;
       position: relative;
-      top: 1em;
+      top: 2em;
     }
 
     h1 {
