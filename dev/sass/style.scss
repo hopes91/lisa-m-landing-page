@@ -17,7 +17,6 @@ html, body {
   position: relative;
 
   a {
-    display: inline-block;
     text-decoration: none;
     border: none;
   }
@@ -83,6 +82,7 @@ html, body {
 
     .free-consultation-button {
       @include indentations(1em, 1em);
+      display: inline-block;
       color: $white;
       background-color: rgba(255, 255, 255, 0);
       border: 1px solid $white;
@@ -91,6 +91,76 @@ html, body {
       &:hover {
         background-color: rgba(255, 255, 255, 0.1);
         transform: translate(0.5px, 0.5px);
+      }
+    }
+
+    .info-buttons {
+      @include dimensions(100%, auto);
+      margin-top: 2em;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      .info-button {
+        @include dimensions(22em, 15em);
+        @include indentations(1em, 1.5em 1em 1em 1em);
+        display: inline-block;
+        color: inherit;
+        background-color: $black-blue;
+        border-top: 5px solid $brown;
+        vertical-align: top;
+
+        &:hover {
+          transform: translate(0.5px, 0.5px);
+        }
+
+        .info-button__title {
+          margin: 0;
+          text-transform: uppercase;
+        }
+
+        .info-button__text {
+          @include dimensions(100%, auto);
+          margin-top: 1em;
+          display: inline-block;
+        }
+
+        &:first-child {
+          span {
+            @include dimensions(50%, auto);
+            padding: 0 1em;
+            display: inline-block;
+            box-sizing: border-box;
+
+            &:first-child {
+              border-right: 1px solid $brown;
+              float: left;
+            }
+
+            &:last-child {
+              border-left: 1px solid $brown;
+              float: right;
+            }
+
+            h4 {
+              font-size: 1.05em;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          ul {
+            text-align: left;
+          }
+        }
+      }
+
+      .info-button_bottom {
+        @extend .info-button;
+        @include dimensions(73em, auto);
+        margin: 2em auto;
+        padding: 1.5em;
+        display: block;
       }
     }
   }
