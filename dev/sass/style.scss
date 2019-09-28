@@ -61,7 +61,7 @@ html, body {
 
     .logo {
       @include dimensions(7em, 3em);
-      margin: 0 auto 3em auto;
+      margin: 0 auto 10% auto;
       color: $white;
       border: 1px solid $white;
       position: relative;
@@ -72,14 +72,14 @@ html, body {
       @include indentations(0 auto, 0 1em);
       font: {
         family: serif;
-        size: 5em;
+        size: 3em;
       }
     }
 
     h2 {
       margin: 1em;
       font-size: 1.1em;
-      font-weight: lighter;
+      line-height: 1.5;
     }
   }
 
