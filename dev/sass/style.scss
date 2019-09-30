@@ -68,7 +68,7 @@ html, body {
 
     .logo {
       @include dimensions(7em, 3em);
-      margin: 0 auto 5% auto;
+      margin: 0 auto;
       border: 1px solid $white;
       position: relative;
       top: 2em;
@@ -79,6 +79,8 @@ html, body {
         size: 1.1em;
         weight: normal;
       }
+      position: relative;
+      top: 2em;
     }
 
     .header__title {
@@ -86,15 +88,19 @@ html, body {
         family: serif;
         size: 3em;
       }
+      position: relative;
+      top: 1em;
     }
 
     .header__what-we-do {
       font-size: 1.1em;
       line-height: 1.5;
+      position: relative;
+      top: 1.5em;
     }
 
     .header__free-consultation-button {
-      @include indentations(1em 0, 1em);
+      @include indentations(3em 0 2em 0, 1em);
       display: inline-block;
       background-color: rgba(255, 255, 255, 0);
       border: 1px solid $white;
