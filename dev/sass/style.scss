@@ -111,6 +111,9 @@ html, body {
       min-height: 67em;
       display: flex;
       justify-content: center;
+      @include respond-to('max-width: 1024px') {
+        justify-content: space-between;
+      }
 
       .header__info-section {
         @include dimensions(30%, auto);
@@ -118,6 +121,10 @@ html, body {
         @include indentations(1em 0.7em, 0);
         color: $black;
         background-color: $white;
+        @include respond-to('max-width: 1024px') {
+          width: 32%;
+          margin: 1em 0;
+        }
 
         ul, ol {
           padding-left: 1.5em;

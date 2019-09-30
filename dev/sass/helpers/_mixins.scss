@@ -12,9 +12,9 @@
   // @if $media == 'max-width: 1366px' {
   //   @media (max-width: 1366px) { @content; }
   // }
-  // @else if $media == 'max-width: 1024px' {
-  //   @media (max-width: 1024px) { @content; }
-  // }
+  @if $media == 'max-width: 1024px' {
+    @media (max-width: 1024px) { @content; }
+  }
   // @else if $media == 'max-width: 800px' {
   //   @media (max-width: 800px) { @content; }
   // }
