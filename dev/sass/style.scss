@@ -85,10 +85,9 @@ html, body {
       line-height: 1.5;
     }
 
-    .free-consultation-button {
-      @include indentations(1em, 1em);
+    .header__free-consultation-button {
+      @include indentations(1em 0, 1em);
       display: inline-block;
-      color: $white;
       background-color: rgba(255, 255, 255, 0);
       border: 1px solid $white;
       border-radius: 0.1em;
