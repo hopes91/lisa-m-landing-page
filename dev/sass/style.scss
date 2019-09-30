@@ -25,20 +25,20 @@ html, body {
     border: none;
   }
 
-  .nav {
-    @include dimensions(100%, 4em);
-    font-weight: bold;
-    text-align: right;
-    background-color: $white;
-
-    .nav__link {
-      @include indentations(0, 1.6em 1em);
-      font-size: 0.9em;
-      line-height: 1.5;
-      color: $black;
-      text-transform: uppercase;
-    }
-  }
+  // .nav {
+  //   @include dimensions(100%, 4em);
+  //   font-weight: bold;
+  //   text-align: right;
+  //   background-color: $white;
+  //
+  //   .nav__link {
+  //     @include indentations(0, 1.6em 1em);
+  //     font-size: 0.9em;
+  //     line-height: 1.5;
+  //     color: $black;
+  //     text-transform: uppercase;
+  //   }
+  // }
 
   header {
     @include dimensions(100%, 100vh);
@@ -95,24 +95,26 @@ html, body {
     }
 
     .info-buttons {
-      @include dimensions(100%, auto);
+      @include dimensions(100%, 50%);
       margin-top: 2em;
       position: absolute;
       left: 0;
       bottom: 0;
 
+      a {
+        &:hover {
+          transform: translate(0.5px, 0.5px);
+        }
+      }
+
       .info-button {
-        @include dimensions(22em, 15em);
+        @include dimensions(22em, 19em);
         @include indentations(1em, 1.5em 1em 1em 1em);
         display: inline-block;
         color: inherit;
         background-color: $black-blue;
         border-top: 5px solid $brown;
         vertical-align: top;
-
-        &:hover {
-          transform: translate(0.5px, 0.5px);
-        }
 
         .info-button__title {
           margin: 0;
@@ -126,18 +128,20 @@ html, body {
         }
 
         &:first-child {
+          a,
           span {
             @include dimensions(50%, auto);
             padding: 0 1em;
             display: inline-block;
             box-sizing: border-box;
+            color: inherit;
 
             &:first-child {
               border-right: 1px solid $brown;
               float: left;
             }
 
-            &:last-child {
+            &:nth-child(2) {
               border-left: 1px solid $brown;
               float: right;
             }
@@ -146,6 +150,12 @@ html, body {
               font-size: 1.05em;
             }
           }
+
+          .info-button_bottom {
+            @include dimensions(100%, auto);
+            @include indentations(1em 0, 1em);
+            line-height: 1.3;
+          }
         }
 
         &:nth-child(3) {
@@ -153,14 +163,6 @@ html, body {
             text-align: left;
           }
         }
-      }
-
-      .info-button_bottom {
-        @extend .info-button;
-        @include dimensions(40em, auto);
-        margin: 2em auto;
-        padding: 1.5em;
-        display: block;
       }
     }
   }
