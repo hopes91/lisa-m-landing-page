@@ -60,22 +60,27 @@ html, body {
 
     .logo {
       @include dimensions(7em, 3em);
-      margin: 0 auto 7% auto;
+      margin: 0 auto 5% auto;
       border: 1px solid $white;
       position: relative;
       top: 2em;
     }
 
-    h1 {
-      @include indentations(0 auto, 0 1em);
+    .header__who-we-are {
+      font: {
+        size: 1.1em;
+        weight: normal;
+      }
+    }
+
+    .header__title {
       font: {
         family: serif;
         size: 3em;
       }
     }
 
-    h2 {
-      margin: 1em;
+    .header__what-we-do {
       font-size: 1.1em;
       line-height: 1.5;
     }
