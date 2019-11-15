@@ -12,8 +12,9 @@ html, body {
   font: {
     family: 'Rubik', sans-serif;
     size: 16px;
+    color: $black;
   }
-  background-color: $black-blue;
+  background-color: $white;
   position: relative;
 
   a {
@@ -41,49 +42,60 @@ html, body {
   // }
 
   header {
-    @include dimensions(100%, 100vh);
+    @include dimensions(100%, auto);
+    padding: 0 1em;
+    box-sizing: border-box;
     color: $white;
     text-align: center;
+    background-color: $black;
     position: relative;
     z-index: 1;
+
+    a {
+      color: $white;
+    }
 
     &:before {
       @include dimensions(100%, 100%);
       content: '';
-      background: url('images/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg') top right/cover no-repeat;
+      background: url('images/wp1841296-italy-flag-wallpapers.jpg') top center/cover no-repeat;
       position: absolute;
       top: 0;
       left: 0;
-      opacity: 0.5;
+      opacity: 0.8;
       z-index: -1;
     }
 
     .logo {
       @include dimensions(7em, 3em);
-      margin: 0 auto 7% auto;
+      margin: 0 auto;
       border: 1px solid $white;
       position: relative;
       top: 2em;
     }
 
-    h1 {
-      @include indentations(0 auto, 0 1em);
+    .header__title {
       font: {
         family: serif;
-        size: 3em;
+        size: 3.3em;
       }
+      position: relative;
+      top: 1em;
     }
 
-    h2 {
-      margin: 1em;
-      font-size: 1.1em;
+    .header__what-we-do {
+      font: {
+        size: 1.3em;
+        weight: normal;
+      }
       line-height: 1.5;
+      position: relative;
+      top: 1.5em;
     }
 
-    .free-consultation-button {
-      @include indentations(1em, 1em);
+    .header__free-consultation-button {
+      @include indentations(3em 0 2em 0, 1em);
       display: inline-block;
-      color: $white;
       background-color: rgba(255, 255, 255, 0);
       border: 1px solid $white;
       border-radius: 0.1em;
@@ -94,74 +106,77 @@ html, body {
       }
     }
 
-    .info-buttons {
-      @include dimensions(100%, 50%);
-      margin-top: 2em;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-
-      a {
-        &:hover {
-          transform: translate(0.5px, 0.5px);
-        }
+    .header__info {
+      @include dimensions(100%, auto);
+      min-height: 67em;
+      display: flex;
+      justify-content: center;
+      @include respond-to('max-width: 1024px') {
+        justify-content: space-between;
       }
 
-      .info-button {
-        @include dimensions(22em, 19em);
-        @include indentations(1em, 1.5em 1em 1em 1em);
-        display: inline-block;
-        color: inherit;
-        background-color: $black-blue;
-        border-top: 5px solid $brown;
-        vertical-align: top;
-
-        .info-button__title {
-          margin: 0;
-          text-transform: uppercase;
+      .header__info-section {
+        @include dimensions(30%, auto);
+        max-width: 25em;
+        @include indentations(1em 0.7em, 0);
+        color: $black;
+        background-color: $white;
+        @include respond-to('max-width: 1024px') {
+          width: 32%;
+          margin: 1em 0;
         }
 
-        .info-button__text {
-          @include dimensions(100%, auto);
-          margin-top: 1em;
-          display: inline-block;
+        ul, ol {
+          padding-left: 1.5em;
+          text-align: left;
+
+          li {
+            padding: 0.2em 0;
+          }
         }
 
         &:first-child {
-          a,
           span {
-            @include dimensions(50%, auto);
-            padding: 0 1em;
+            margin: 0.2em 0;
             display: inline-block;
-            box-sizing: border-box;
-            color: inherit;
-
-            &:first-child {
-              border-right: 1px solid $brown;
-              float: left;
-            }
-
-            &:nth-child(2) {
-              border-left: 1px solid $brown;
-              float: right;
-            }
 
             h4 {
+              margin: 0;
               font-size: 1.05em;
+              line-height: 1.3;
             }
           }
+        }
 
-          .info-button_bottom {
-            @include dimensions(100%, auto);
-            @include indentations(1em 0, 1em);
-            line-height: 1.3;
+        &:nth-child(2),
+        &:nth-child(3) {
+          .header__info-section-title {
+            margin-bottom: 2.7em;
           }
         }
 
         &:nth-child(3) {
           ul {
-            text-align: left;
+            p {
+              margin-top: 0.2em;
+            }
           }
+        }
+
+        .header__info-section-image {
+          @include dimensions(100%, auto);
+        }
+
+        .header__info-section-title {
+          margin: 1em;
+          font-size: 1.5em;
+          text-transform: uppercase;
+        }
+
+        .header__info-section-text {
+          @include dimensions(100%, auto);
+          padding: 0 1em;
+          box-sizing: border-box;
         }
       }
     }
@@ -174,8 +189,6 @@ html, body {
       @include dimensions(100%, auto);
       @include indentations(0, 1em);
       box-sizing: border-box;
-      color: $white;
-      background-color: $black-blue;
 
       .info-section__content {
         @include dimensions(70%, 80%);
@@ -185,7 +198,6 @@ html, body {
 
         .info-section__title {
           margin: 0.5em 0 0.8em 0;
-          color: $brown;
           font: {
             family: serif;
             size: 1.8em;
@@ -196,7 +208,7 @@ html, body {
         hr {
           width: 3em;
           margin: 0 auto 3em auto;
-          border: 1px solid $brown;
+          border: 1px solid $black;
         }
       }
     }
@@ -222,7 +234,7 @@ html, body {
         @include dimensions(0.1em, 20em);
         margin: auto;
         display: inline-block;
-        background-color: $brown;
+        background-color: $black;
         position: absolute;
         top: 0;
         right: 0;
@@ -240,13 +252,13 @@ html, body {
       }
     }
 
-    .projects, .contact-me {
-      height: 30em; /* remove later */
-    }
-
-    .projects {
-      background-color: $white;
-    }
+    // .projects, .contact-me {
+    //   height: 30em; /* remove later */
+    // }
+    //
+    // .projects {
+    //   background-color: $white;
+    // }
   }
 
   footer {
