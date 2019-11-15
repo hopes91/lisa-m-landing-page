@@ -5,7 +5,7 @@
   "repository": "git@github.com:hopes91/lisa-m-landing-page.git",
   "author": "Nadya F-a <iam.nadyafa@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
