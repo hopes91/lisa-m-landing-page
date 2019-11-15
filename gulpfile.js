@@ -2,21 +2,39 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const htmlmin = require('gulp-htmlmin');
+const imagemin = require('gulp-imagemin');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const uglifycss = require('gulp-uglifycss');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const cache = require('gulp-cached');
+const cached = require('gulp-cached');
 const remember = require('gulp-remember');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
+gulp.task('html', function() {
+  return gulp.src('./dev/assets/*.html')
+    .pipe(cached('html'))
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(remember('html'))
+    .pipe(gulp.dest('./public'));
+});
+
+gulp.task('img', function() {
+  return gulp.src('./dev/assets/images/*.*')
+    .pipe(cached('img'))
+    .pipe(imagemin())
+    .pipe(remember('img'))
+    .pipe(gulp.dest('./public/images'));
+});
+
 gulp.task('css', function() {
   return gulp.src('./dev/sass/**/*.scss')
-    .pipe(cache('css'))
+    .pipe(cached('css'))
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([autoprefixer()]))
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(remember('css'))
     .pipe(uglifycss({ "uglyComments": true }))
     .pipe(gulp.dest('./public'));
@@ -28,40 +46,58 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./public'));
 });
 
-gulp.task('assets', function() {
-  return gulp.src('./dev/assets/**/*.*', { since: gulp.lastRun('assets') })
-    .pipe(gulp.dest('./public'));
-});
-
 gulp.task('clean', function() {
   return del('./public');
 });
 
 gulp.task('build', gulp.series(
   'clean',
-  gulp.parallel('css', 'js', 'assets'))
+  gulp.parallel('html', 'img', 'css', 'js'))
 );
 
 gulp.task('watch', function() {
+  const htmlWatcher = gulp.watch('./dev/assets/*.html', gulp.series('html'));
+
+  htmlWatcher.on('change', function(event) {
+    if (event.type === 'deleted') {
+      delete cached.caches['html'][event.path];
+      remember.forget('html', event.path);
+    }
+  });
+
+  const imgWatcher = gulp.watch('./dev/assets/images/*.*', gulp.series('img'));
+
+  imgWatcher.on('change', function(event) {
+    if (event.type === 'deleted') {
+      delete cached.caches['img'][event.path];
+      remember.forget('img', event.path);
+    }
+  });
+
   const cssWatcher = gulp.watch('./dev/sass/**/*.scss', gulp.series('css'));
 
-  cssWatcher.on('unlink', function(event) {
-    delete cache.caches['css'][event.path];
-    remember.forget('css', event.path);
+  cssWatcher.on('change', function(event) {
+    if (event.type === 'deleted') {
+      delete cached.caches['css'][event.path];
+      remember.forget('css', event.path);
+    }
   });
 
   const jsWatcher = gulp.watch('./dev/js/**/*.js', gulp.series('js'));
 
-  jsWatcher.on('unlink', function(event) {
-    delete cache.caches['js'][event.path];
-    remember.forget('js', event.path);
+  jsWatcher.on('change', function(event) {
+    if (event.type === 'deleted') {
+      delete cached.caches['js'][event.path];
+      remember.forget('js', event.path);
+    }
   });
-
-  gulp.watch('./dev/assets/**/*.*', gulp.series('assets'));
 });
 
 gulp.task('server', function() {
-  browserSync.init({ server: './public' });
+  browserSync.init({
+    server: './public'
+  });
+
   browserSync.watch('./public/**/*.*').on('change', browserSync.reload);
 });
 
