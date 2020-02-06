@@ -2,13 +2,14 @@
 @import 'helpers/mixins';
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap&subset=latin-ext');
 
-html, body {
+html,
+body {
   @include dimensions(100%, 100%);
   @include indentations(0, 0);
 }
 
 .container {
-  @include dimensions(100%, auto);
+  @include dimensions(auto, 100%);
   font: {
     family: 'Rubik', sans-serif;
     size: 16px;
@@ -42,8 +43,8 @@ html, body {
   // }
 
   header {
-    @include dimensions(100%, auto);
     padding: 0 1em;
+    @include dimensions(auto, 100%);
     box-sizing: border-box;
     color: $white;
     text-align: center;
@@ -67,8 +68,8 @@ html, body {
     }
 
     .logo {
-      @include dimensions(7em, 3em);
       margin: 0 auto;
+      @include dimensions(3em, 7em);
       border: 1px solid $white;
       position: relative;
       top: 2em;
@@ -107,19 +108,20 @@ html, body {
     }
 
     .header__info {
-      @include dimensions(100%, auto);
       min-height: 67em;
+      @include dimensions(auto, 100%);
       display: flex;
       justify-content: center;
+      // min-height: 67em;
       @include respond-to('max-width: 1024px') {
         justify-content: space-between;
       }
 
       .header__info-section {
-        @include dimensions(30%, auto);
         max-width: 25em;
         @include indentations(1em 0.7em, 0);
         color: $black;
+        @include dimensions(auto, 30%);
         background-color: $white;
         @include respond-to('max-width: 1024px') {
           width: 32%;
@@ -183,16 +185,16 @@ html, body {
   }
 
   main {
-    @include dimensions(100%, auto);
+    @include dimensions(auto, 100%);
 
     .info-section {
-      @include dimensions(100%, auto);
+      @include dimensions(auto, 100%);
       @include indentations(0, 1em);
       box-sizing: border-box;
 
       .info-section__content {
-        @include dimensions(70%, 80%);
         max-width: 70em;
+        @include dimensions(80%, 70%);
         margin: 0 auto;
         position: relative;
 
@@ -216,7 +218,7 @@ html, body {
     .about-me {
       .about-me__text,
       .about-me__photo {
-        @include dimensions(45%, auto);
+        @include dimensions(auto, 45%);
         max-width: 30em;
         min-height: 23em;
       }
@@ -231,9 +233,9 @@ html, body {
       }
 
       span {
-        @include dimensions(0.1em, 20em);
         margin: auto;
         display: inline-block;
+        @include dimensions(20em, 0.1em);
         background-color: $black;
         position: absolute;
         top: 0;
@@ -247,7 +249,7 @@ html, body {
         float: right;
 
         img {
-          @include dimensions(17em, auto);
+          @include dimensions(17em, 100%);
         }
       }
     }
@@ -262,7 +264,7 @@ html, body {
   }
 
   footer {
-    @include dimensions(100%, 4em);
+    @include dimensions(4em, 100%);
     position: absolute;
     // bottom: 0;
 
