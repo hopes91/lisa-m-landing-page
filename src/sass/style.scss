@@ -128,52 +128,76 @@ body {
       }
     }
 
-    .header__info {
-      min-height: 67em;
+    .info {
       @include dimensions(auto, 100%);
       display: flex;
       justify-content: center;
-      // min-height: 67em;
+
       @include respond-to('max-width: 1024px') {
         justify-content: space-between;
       }
 
-      .header__info-section {
-        max-width: 25em;
-        @include indentations(1em 0.7em, 0);
-        color: $black;
+      .info-section {
         @include dimensions(auto, 30%);
         background-color: $white;
+        color: $black;
+        margin: 1em 0.7em;
+        max-width: 25em;
+
         @include respond-to('max-width: 1024px') {
-          width: 32%;
           margin: 1em 0;
+          width: 32.5%;
         }
 
-        ul, ol {
-          padding-left: 1.5em;
-          text-align: left;
+        .info-section-image {
+          @include dimensions(auto, 100%);
+        }
 
-          li {
-            padding: 0.2em 0;
+        .info-section-title {
+          font-size: 1.5em;
+          margin: 1em;
+          text-transform: uppercase;
+        }
+
+        .info-section-text {
+          @include dimensions(auto, 100%);
+          box-sizing: border-box;
+          padding: 0 1em;
+
+          @include respond-to('max-width: 1024px') {
+            padding: 0 0.7em;
+          }
+
+          ul, ol {
+            padding-left: 1.5em;
+            text-align: left;
+
+            @include respond-to('max-width: 1024px') {
+              padding-left: 1em;
+            }
+
+            li {
+              padding: 0.2em 0;
+            }
           }
         }
 
         &:first-child {
           span {
-            margin: 0.2em 0;
             display: inline-block;
+            margin: 0.25em 0;
 
-            h4 {
-              margin: 0;
+            h3 {
               font-size: 1.05em;
               line-height: 1.3;
+              margin: 0;
             }
           }
         }
 
         &:nth-child(2),
         &:nth-child(3) {
-          .header__info-section-title {
+          .info-section-title {
             margin-bottom: 2.7em;
           }
         }
@@ -184,22 +208,6 @@ body {
               margin-top: 0.2em;
             }
           }
-        }
-
-        .header__info-section-image {
-          @include dimensions(100%, auto);
-        }
-
-        .header__info-section-title {
-          margin: 1em;
-          font-size: 1.5em;
-          text-transform: uppercase;
-        }
-
-        .header__info-section-text {
-          @include dimensions(100%, auto);
-          padding: 0 1em;
-          box-sizing: border-box;
         }
       }
     }
@@ -214,17 +222,17 @@ body {
       box-sizing: border-box;
 
       .info-section__content {
-        max-width: 70em;
         @include dimensions(80%, 70%);
         margin: 0 auto;
+        max-width: 70em;
         position: relative;
 
         .info-section__title {
-          margin: 0.5em 0 0.8em 0;
           font: {
             family: serif;
             size: 1.8em;
           }
+          margin: 0.5em 0 0.8em 0;
           text-align: center;
         }
 
