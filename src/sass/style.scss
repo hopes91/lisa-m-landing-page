@@ -141,12 +141,6 @@ body {
         justify-content: space-between;
       }
 
-      @include respond-to('max-width: 800px') {
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 2em;
-      }
-
       .info-section {
         @include dimensions(auto, 30%);
         background-color: $white;
@@ -158,11 +152,6 @@ body {
         @include respond-to('max-width: 1024px') {
           margin: 1em 0;
           width: 32.5%;
-        }
-
-        @include respond-to('max-width: 800px') {
-          @include dimensions(19em, 30em);
-          margin: 2em 1em;
         }
 
         .info-section-image {
@@ -182,10 +171,6 @@ body {
 
           @include respond-to('max-width: 1024px') {
             padding: 0 0.7em;
-          }
-
-          @include respond-to('max-width: 800px') {
-            display: none;
           }
 
           ul, ol {
@@ -227,25 +212,6 @@ body {
             p {
               margin-top: 0.2em;
             }
-          }
-        }
-
-        .show-more-button {
-          background-color: $gray;
-          border: none;
-          bottom: -3.3em;
-          color: $white;
-          cursor: pointer;
-          font-size: 0.9em;
-          display: none;
-          left: 0;
-          padding: 1.2em 1em;
-          position: absolute;
-          text-transform: uppercase;
-          width: 100%;
-
-          @include respond-to('max-width: 800px') {
-            display: inline-block;
           }
         }
       }
