@@ -3,9 +3,9 @@ const anchorElements = document.querySelectorAll('[href^="#"]');
 function scrollSlower(event) {
   event.preventDefault();
 
-  const speed = 0.3;
+  const speed = 0.5;
   const offsetY = window.pageYOffset;
-  const hash = this.href.replace(/[^#]*(.*)/, '$1');
+  const hash = event.target.href.replace(/[^#]*(.*)/, '$1');
   const topIndent = document.querySelector(hash).getBoundingClientRect().top;
   let start = null;
 
@@ -32,3 +32,5 @@ function scrollSlower(event) {
 }
 
 anchorElements.forEach(anchorElement => anchorElement.addEventListener('click', scrollSlower));
+
+module.exports = scrollSlower;
