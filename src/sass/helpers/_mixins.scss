@@ -15,11 +15,17 @@
   @else if $media == 'max-width: 1024px' {
     @media (max-width: 1024px) { @content; }
   }
+  @else if $media == 'max-width: 950px' {
+    @media (max-width: 950px) { @content; }
+  }
   @else if $media == 'max-width: 800px' {
     @media (max-width: 800px) { @content; }
   }
   @else if $media == 'max-width: 640px' {
     @media (max-width: 640px) { @content; }
+  }
+  @else if $media == 'max-width: 530px' {
+    @media (max-width: 530px) { @content; }
   }
   @else if $media == 'max-width: 480px' {
     @media (max-width: 480px) { @content; }
