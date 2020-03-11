@@ -326,9 +326,9 @@ body {
         }
 
         hr {
-          width: 3em;
-          margin: 0 auto 3em auto;
           border: 1px solid $black;
+          margin: 0 auto 3em auto;
+          width: 3em;
         }
       }
     }
@@ -351,20 +351,20 @@ body {
       }
 
       span {
-        margin: auto;
-        display: inline-block;
         @include dimensions(20em, 0.1em);
         background-color: $black;
-        position: absolute;
-        top: 0;
-        right: 0;
         bottom: 0;
+        display: inline-block;
         left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
       }
 
       .about-me__photo {
-        text-align: center;
         float: right;
+        text-align: center;
 
         img {
           @include dimensions(17em, 100%);
@@ -387,13 +387,13 @@ body {
     // bottom: 0;
 
     .copyright {
+      left: 1em;
       position: absolute;
       top: 1.5em;
-      left: 1em;
 
       p {
-        margin: 0;
         font-weight: bold;
+        margin: 0;
       }
     }
   }
