@@ -1,8 +1,8 @@
-const title = document.querySelector('header .title');
-
 const manageTitleSize = () => {
+  const title = document.querySelector('header .title');
+
   window.innerWidth <= 800 ?
-  title.textContent = `С Уважением \r\nк Вашей Истории \r\nи Вашим Финансам`:
+    title.textContent = `С Уважением \r\nк Вашей Истории \r\nи Вашим Финансам`:
   window.innerWidth <= 1350 ?
     title.textContent = `С Уважением \r\nк Вашей Истории и Вашим Финансам`:
     title.textContent = 'С Уважением к Вашей Истории и Вашим Финансам';
