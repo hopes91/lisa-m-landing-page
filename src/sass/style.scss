@@ -18,6 +18,10 @@ body {
   }
   position: relative;
 
+  * {
+    outline-color: #14783e;
+  }
+
   a {
     border: none;
     text-decoration: none;
