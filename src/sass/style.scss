@@ -56,14 +56,6 @@ body {
       color: $black;
       position: relative;
 
-      .info-section-title {
-        font: {
-          size: 1.5em;
-          weight: bold;
-        }
-        text-transform: uppercase;
-      }
-
       .info-section-text {
         @include dimensions(auto, 100%);
         box-sizing: border-box;
@@ -71,6 +63,12 @@ body {
 
         @include respond-to('max-width: 1024px') {
           padding: 0 0.7em;
+        }
+
+        span {
+          p {
+            margin-top: 0;
+          }
         }
 
         ul, ol {
@@ -260,18 +258,28 @@ body {
         .info-section-title {
           color: $black;
           display: inline-block;
-          margin: 0.8em;
 
           @include respond-to('max-width: 1024px') {
             @include dimensions(100%, 100%);
-            @include indentations(0, 0.5em 0.5em 0 0.5em);
-            box-sizing: border-box;
             cursor: pointer;
-            font-size: 1.2em;
           }
 
-          @include respond-to('max-width: 640px') {
-            font-size: 1.1em;
+          h3 {
+            font: {
+              size: 1.5em;
+              weight: bold;
+            }
+            margin: 0.8em;
+            text-transform: uppercase;
+
+            @include respond-to('max-width: 1024px') {
+              @include indentations(0, 0.5em);
+              font-size: 1.2em;
+            }
+
+            @include respond-to('max-width: 640px') {
+              font-size: 1.1em;
+            }
           }
         }
 
@@ -284,7 +292,7 @@ body {
         &:nth-child(2),
         &:nth-child(3) {
           .info-section-title {
-            margin-bottom: 2.05em;
+            margin-bottom: 2.3em;
           }
         }
       }
@@ -309,8 +317,12 @@ body {
         background: rgb(237,237,237);
         background: radial-gradient(circle, rgba(237,237,237,1) 10%, rgba(222,222,222,1) 90%);
         box-shadow: 3px 5px 5px #bababa;
-        margin: 1em 0;
+        margin: 0.7em 0;
         text-align: center;
+
+        @include respond-to('max-width: 640px') {
+          @include indentations(0.5em 0, 0.7em);
+        }
 
         @include respond-to('max-width: 480px') {
           padding: 0.7em;
@@ -324,8 +336,18 @@ body {
           }
         }
 
+        .info-section-title {
+          font-size: 1.5em;
+          margin: 0.8em;
+          text-transform: uppercase;
+        }
+
         &:first-child {
           margin-top: 2em;
+
+          @include respond-to('max-width: 640px') {
+            margin-top: 1.5em;
+          }
         }
       }
     }
