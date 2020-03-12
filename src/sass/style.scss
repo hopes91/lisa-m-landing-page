@@ -358,60 +358,123 @@ body {
       box-sizing: border-box;
 
       .section-content {
-        @include dimensions(80%, 70%);
+        @include dimensions(80%, 70em);
         margin: 0 auto;
-        max-width: 70em;
         position: relative;
 
+        @include respond-to('max-width: 1200px') {
+          width: 60em;
+        }
+
+        @include respond-to('max-width: 1024px') {
+          width: 47em;
+        }
+
+        @include respond-to('max-width: 800px') {
+          width: 100%;
+        }
+
         .section-title {
-          font-size: 1.8em;
-          margin: 0.5em 0 0.8em 0;
+          font-size: 2em;
+          margin: 0.5em 1em 0.3em 1em;
           text-align: center;
         }
 
         hr {
+          background-color: black;
           border: 1px solid $black;
-          margin: 0 auto 3em auto;
-          width: 3em;
+          margin: 0 auto 2em auto;
+          width: 5em;
         }
       }
     }
 
     .about-me {
-      .about-me__text,
-      .about-me__photo {
-        @include dimensions(auto, 45%);
-        max-width: 30em;
-        min-height: 23em;
+      @include respond-to('max-width: 800px') {
+        text-align: center;
       }
 
-      .about-me__text {
+      .section-image,
+      .section-text {
         display: inline-block;
-        text-align: justify;
+      }
 
-        p {
-          margin: 0 0 1em 0;
+      .section-image {
+        max-height: 640px;
+
+        @include respond-to('max-width: 1200px') {
+          height: 600px;
+        }
+
+        @include respond-to('max-width: 1024px') {
+          height: 500px;
+        }
+
+        @include respond-to('max-width: 480px') {
+          height: 400px;
+        }
+
+        img {
+          @include dimensions(100%, auto);
+          box-shadow: 3px 3px 3px #bababa;
         }
       }
 
       span {
-        @include dimensions(20em, 0.1em);
+        @include dimensions(20em, 2px);
         background-color: $black;
         bottom: 0;
         display: inline-block;
-        left: 0;
+        left: -10em;
         margin: auto;
         position: absolute;
         right: 0;
-        top: 0;
+        top: 5em;
+
+        @include respond-to('max-width: 1200px') {
+          left: -5em;
+        }
+
+        @include respond-to('max-width: 1024px') {
+          height: 22em;
+          left: -2.3em;
+          top: 6em;
+        }
+
+        @include respond-to('max-width: 800px') {
+          display: none;
+        }
       }
 
-      .about-me__photo {
-        float: right;
-        text-align: center;
+      .section-text {
+        @include dimensions(auto, 35em);
+        position: absolute;
+        right: 2em;
+        top: 38%;
 
-        img {
-          @include dimensions(17em, 100%);
+        @include respond-to('max-width: 1200px') {
+          right: 0;
+          top: 37%;
+          width: 30em;
+        }
+
+        @include respond-to('max-width: 1024px') {
+          top: 31.5%;
+          width: 23em;
+        }
+
+        @include respond-to('max-width: 800px') {
+          position: relative;
+          top: 1em;
+          width: 80%;
+        }
+
+        @include respond-to('max-width: 640px') {
+          width: 100%;
+        }
+
+        p {
+          margin: 0 0 1em 0;
         }
       }
     }
