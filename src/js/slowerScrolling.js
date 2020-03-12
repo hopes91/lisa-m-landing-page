@@ -5,7 +5,7 @@ function scrollSlower(event) {
 
   const speed = 0.5;
   const offsetY = window.pageYOffset;
-  const hash = event.target.href.replace(/[^#]*(.*)/, '$1');
+  const hash = event.currentTarget.href.replace(/[^#]*(.*)/, '$1');
   const topIndent = document.querySelector(hash).getBoundingClientRect().top;
   let start = null;
 
@@ -30,7 +30,5 @@ function scrollSlower(event) {
       location.hash = hash;
   }
 }
-
-anchorElements.forEach(anchorElement => anchorElement.addEventListener('click', scrollSlower));
 
 module.exports = scrollSlower;

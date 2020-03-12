@@ -400,6 +400,19 @@ body {
     // .projects {
     //   background-color: $white;
     // }
+
+    .arrow-up {
+      @include dimensions(3em, 3em);
+      bottom: 0.7em;
+      display: none;
+      position: fixed;
+      right: 1.2em;
+      z-index: 1;
+
+      img {
+        @include dimensions(100%, 100%);
+      }
+    }
   }
 
   footer {
