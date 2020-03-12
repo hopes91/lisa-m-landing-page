@@ -116,6 +116,11 @@ body {
     text-align: center;
     z-index: 1;
 
+    @include respond-to('max-width: 1024px') {
+      height: 100vh;
+      min-height: 35em;
+    }
+
     a {
       color: $white;
     }
@@ -132,7 +137,7 @@ body {
     }
 
     .logo {
-      @include dimensions(3em, 7em);
+      @include dimensions(2em, 12em);
       border: 1px solid $white;
       margin: 0 auto;
       position: relative;
@@ -158,7 +163,7 @@ body {
 
       @include respond-to('max-width: 480px') {
         font-size: 1.7em;
-        top: 1em;
+        top: 0.7em;
       }
     }
 
@@ -172,7 +177,7 @@ body {
 
       @include respond-to('max-width: 480px') {
         font-size: 1.2em;
-        top: 1.5em;
+        top: 1em;
       }
 
       span {
@@ -192,6 +197,14 @@ body {
         margin-bottom: 1em;
       }
 
+      @include respond-to('max-width: 530px') {
+        padding: 0.7em;
+      }
+
+      @include respond-to('max-width: 480px') {
+        margin-top: 2em;
+      }
+
       &:hover {
         background-color: rgba(255, 255, 255, 0.1);
         transform: translate(0.03em, 0.03em);
@@ -200,10 +213,15 @@ body {
 
     .info-header {
       @include respond-to('max-width: 1024px') {
+        bottom: 1em;
+        box-sizing: border-box;
         justify-content: space-around;
+        left: 0;
+        padding: 0 1em;
+        position: absolute;
       }
 
-      @include respond-to('max-width: 640px') {
+      @include respond-to('max-width: 530px') {
         align-items: center;
         flex-direction: column;
       }
@@ -214,15 +232,15 @@ body {
         max-width: 25em;
 
         @include respond-to('max-width: 1024px') {
+          @include dimensions(2.6em, 32%);
           margin: 1em 0;
-          width: 32.5%;
-        }
-
-        @include respond-to('max-width: 950px') {
-          height: 2.6em;
         }
 
         @include respond-to('max-width: 640px') {
+          height: 2.3em;
+        }
+
+        @include respond-to('max-width: 530px') {
           margin: 0.3em 0.7em;
           width: 14.5em;
         }
@@ -230,7 +248,7 @@ body {
         .info-section-image {
           @include dimensions(auto, 100%);
 
-          @include respond-to('max-width: 950px') {
+          @include respond-to('max-width: 1024px') {
             display: none;
           }
         }
@@ -240,18 +258,21 @@ body {
           display: inline-block;
           margin: 0.8em;
 
-          @include respond-to('max-width: 950px') {
+          @include respond-to('max-width: 1024px') {
             @include dimensions(100%, 100%);
             @include indentations(0, 0.5em 0.5em 0 0.5em);
             box-sizing: border-box;
             cursor: pointer;
             font-size: 1.2em;
-            // margin: 0;
+          }
+
+          @include respond-to('max-width: 640px') {
+            font-size: 1.1em;
           }
         }
 
         .info-section-text {
-          @include respond-to('max-width: 950px') {
+          @include respond-to('max-width: 1024px') {
             display: none;
           }
         }
@@ -272,7 +293,7 @@ body {
     .info-main {
       display: none;
 
-      @include respond-to('max-width: 950px') {
+      @include respond-to('max-width: 1024px') {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;

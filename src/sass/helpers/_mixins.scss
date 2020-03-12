@@ -15,9 +15,6 @@
   @else if $media == 'max-width: 1024px' {
     @media (max-width: 1024px) { @content; }
   }
-  @else if $media == 'max-width: 950px' {
-    @media (max-width: 950px) { @content; }
-  }
   @else if $media == 'max-width: 800px' {
     @media (max-width: 800px) { @content; }
   }

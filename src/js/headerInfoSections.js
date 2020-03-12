@@ -3,7 +3,7 @@ const scrollSlower = require('./slowerScrolling.js');
 const infoSectionTitles = document.querySelectorAll('.info-header .info-section-title');
 
 const manageSectionHREF = () => {
-  window.innerWidth <= 950 ?
+  window.innerWidth <= 1024 ?
     infoSectionTitles.forEach((section, index) => {
       switch (index) {
         case 0:
@@ -21,7 +21,7 @@ const manageSectionHREF = () => {
 };
 
 const checkForWindowWidth = event => {
-  window.innerWidth <= 950 &&
+  window.innerWidth <= 1024 &&
     scrollSlower(event);
 };
 
