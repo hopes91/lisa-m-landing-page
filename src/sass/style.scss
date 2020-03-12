@@ -56,7 +56,7 @@ body {
       color: $black;
       position: relative;
 
-      .info-section-text {
+      .section-text {
         @include dimensions(auto, 100%);
         box-sizing: border-box;
         padding: 0 1em;
@@ -247,7 +247,7 @@ body {
           width: 14.5em;
         }
 
-        .info-section-image {
+        .section-image {
           @include dimensions(auto, 100%);
 
           @include respond-to('max-width: 1024px') {
@@ -255,7 +255,7 @@ body {
           }
         }
 
-        .info-section-title {
+        .section-title {
           color: $black;
           display: inline-block;
 
@@ -283,7 +283,7 @@ body {
           }
         }
 
-        .info-section-text {
+        .section-text {
           @include respond-to('max-width: 1024px') {
             display: none;
           }
@@ -291,7 +291,7 @@ body {
 
         &:nth-child(2),
         &:nth-child(3) {
-          .info-section-title {
+          .section-title {
             margin-bottom: 2.3em;
           }
         }
@@ -328,7 +328,7 @@ body {
           padding: 0.7em;
         }
 
-        .info-section-image {
+        .section-image {
           width: 30em;
 
           @include respond-to('max-width: 530px') {
@@ -336,7 +336,7 @@ body {
           }
         }
 
-        .info-section-title {
+        .section-title {
           font-size: 1.5em;
           margin: 0.8em;
           text-transform: uppercase;
@@ -357,17 +357,14 @@ body {
       @include indentations(0, 1em);
       box-sizing: border-box;
 
-      .info-section__content {
+      .section-content {
         @include dimensions(80%, 70%);
         margin: 0 auto;
         max-width: 70em;
         position: relative;
 
-        .info-section__title {
-          font: {
-            family: serif;
-            size: 1.8em;
-          }
+        .section-title {
+          font-size: 1.8em;
           margin: 0.5em 0 0.8em 0;
           text-align: center;
         }

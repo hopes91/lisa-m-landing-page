@@ -1,6 +1,6 @@
 const scrollSlower = require('./slowerScrolling.js');
 
-const infoSectionTitles = document.querySelectorAll('.info-header .info-section-title');
+const infoSectionTitles = document.querySelectorAll('.info-header .section-title');
 
 const manageSectionHREF = () => {
   window.innerWidth <= 1024 ?
