@@ -343,12 +343,21 @@ body {
     }
 
     .info-section {
-      @include dimensions(auto, 100%);
+      @include dimensions(47em, 100%);
       @include indentations(0, 1em);
       box-sizing: border-box;
+      position: relative;
+
+      @include respond-to('max-width: 1024px') {
+        height: 40em;
+      }
+
+      @include respond-to('max-width: 800px') {
+        height: auto;
+      }
 
       .section-content {
-        @include dimensions(80%, 70em);
+        @include dimensions(100%, 70em);
         margin: 0 auto;
         position: relative;
 
@@ -361,110 +370,144 @@ body {
         }
 
         @include respond-to('max-width: 800px') {
+          text-align: center;
           width: 100%;
         }
 
         .section-title {
+          @include indentations(0, 0.5em 1em 0.3em 1em);
           font-size: 2em;
-          margin: 0.5em 1em 0.3em 1em;
           text-align: center;
         }
 
         hr {
           background-color: black;
           border: 1px solid $black;
-          margin: 0 auto 2em auto;
+          margin: 0 auto 3em auto;
           width: 5em;
+
+          @include respond-to('max-width: 1024px') {
+            margin-bottom: 2em;
+          }
+        }
+
+        .section-text,
+        .section-image {
+          display: inline-block;
+          position: absolute;
+
+          @include respond-to('max-width: 800px') {
+            position: relative;
+          }
+        }
+
+        .section-text {
+          @include respond-to('max-width: 800px') {
+            text-align: center;
+            top: 1em;
+            width: 80%;
+          }
+
+          @include respond-to('max-width: 640px') {
+            width: 100%;
+          }
+
+          p {
+            font-size: 1.1em;
+            margin: 0 0 1em 0;
+          }
+        }
+
+        span {
+          @include dimensions(22em, 2px);
+          background-color: $black;
+          bottom: 0;
+          display: inline-block;
+          left: 0;
+          margin: auto;
+          position: absolute;
+          right: 0;
+          top: 5em;
+
+          @include respond-to('max-width: 800px') {
+            display: none;
+          }
+        }
+
+        .section-image {
+          height: 600px;
+
+          @include respond-to('max-width: 1024px') {
+            height: 500px;
+          }
+
+          @include respond-to('max-width: 480px') {
+            height: 400px;
+          }
+
+          img {
+            @include dimensions(100%, auto);
+            box-shadow: 3px 3px 3px #bababa;
+          }
         }
       }
     }
 
     .about-me {
-      @include respond-to('max-width: 800px') {
-        text-align: center;
-      }
-
-      .section-image,
       .section-text {
-        display: inline-block;
+        @include dimensions(auto, 31em);
+        text-align: right;
+        top: 34%;
+
+        @include respond-to('max-width: 1200px') {
+          top: 31%;
+          width: 28em;
+        }
+
+        @include respond-to('max-width: 1024px') {
+          top: 23%;
+          width: 21em;
+        }
       }
 
       .section-image {
-        max-height: 640px;
+        right: 6em;
 
         @include respond-to('max-width: 1200px') {
-          height: 600px;
+          right: 3em;
         }
 
         @include respond-to('max-width: 1024px') {
-          height: 500px;
-        }
-
-        @include respond-to('max-width: 480px') {
-          height: 400px;
-        }
-
-        img {
-          @include dimensions(100%, auto);
-          box-shadow: 3px 3px 3px #bababa;
+          right: 0;
         }
       }
+    }
 
-      span {
-        @include dimensions(20em, 2px);
-        background-color: $black;
-        bottom: 0;
-        display: inline-block;
-        left: -10em;
-        margin: auto;
-        position: absolute;
-        right: 0;
-        top: 5em;
+    .contact-me {
+      .section-image {
+        left: 6em;
 
         @include respond-to('max-width: 1200px') {
-          left: -5em;
+          left: 3em;
         }
 
         @include respond-to('max-width: 1024px') {
-          left: -2.3em;
-          top: 6em;
-        }
-
-        @include respond-to('max-width: 800px') {
-          display: none;
+          left: 0;
         }
       }
 
       .section-text {
-        @include dimensions(auto, 35em);
-        position: absolute;
-        right: 2em;
-        top: 35.5%;
+        @include dimensions(auto, 31em);
+        right: 0;
+        text-align: left;
+        top: 47%;
 
         @include respond-to('max-width: 1200px') {
-          right: 0;
-          top: 33.5%;
-          width: 30em;
+          width: 28em;
         }
 
         @include respond-to('max-width: 1024px') {
-          top: 25%;
-          width: 23em;
-        }
-
-        @include respond-to('max-width: 800px') {
-          position: relative;
-          top: 1em;
-          width: 80%;
-        }
-
-        @include respond-to('max-width: 640px') {
-          width: 100%;
-        }
-
-        p {
-          font-size: 1.1em;
-          margin: 0 0 1em 0;
+          width: 21em;
         }
       }
     }
