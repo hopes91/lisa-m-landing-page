@@ -360,10 +360,6 @@ body {
         @include respond-to('max-width: 1024px') {
           @include dimensions(2.6em, 32%);
           margin: 1em 0;
-
-          &:hover {
-            transform: scale(1px, 1px);
-          }
         }
 
         @include respond-to('max-width: 640px') {
