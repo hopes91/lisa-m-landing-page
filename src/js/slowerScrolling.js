@@ -1,5 +1,3 @@
-const anchorElements = document.querySelectorAll('[href^="#"]');
-
 function scrollSlower(event) {
   event.preventDefault();
 

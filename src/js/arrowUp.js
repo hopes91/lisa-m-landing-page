@@ -3,7 +3,7 @@ const scrollSlower = require('./slowerScrolling.js');
 const arrowUp = document.querySelector('.arrow-up');
 
 const manageArrowUp = () => {
-	if (window.pageYOffset > window.innerHeight / 3) {
+	if (window.pageYOffset > window.innerHeight / 2) {
 		arrowUp.style.display = 'inline-block';
     arrowUp.setAttribute('tabindex', '0');
 	}

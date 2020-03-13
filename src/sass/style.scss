@@ -510,7 +510,7 @@ body {
 
     .arrow-up {
       @include dimensions(3em, 3em);
-      bottom: 0.7em;
+      bottom: 1em;
       display: none;
       position: fixed;
       right: 1.2em;
