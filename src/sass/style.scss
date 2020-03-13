@@ -17,6 +17,12 @@ body {
   }
   position: relative;
 
+  header,
+  main,
+  footer {
+    position: relative;
+  }
+
   * {
     outline-color: #14783e;
   }
@@ -527,14 +533,22 @@ body {
   }
 
   footer {
-    @include dimensions(4em, 100%);
-    position: absolute;
-    // bottom: 0;
+    @include dimensions(6em, 100%);
+
+    @include respond-to('max-width: 640px') {
+      text-align: center;
+    }
 
     .copyright {
-      left: 1em;
-      position: absolute;
-      top: 1.5em;
+      display: inline-block;
+      left: 1.5em;
+      position: relative;
+      top: 2.5em;
+
+      @include respond-to('max-width: 640px') {
+        padding: 2.25em 1.5em;
+        position: static;
+      }
 
       p {
         font-weight: bold;
