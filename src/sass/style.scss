@@ -520,6 +520,10 @@ body {
       right: 1.2em;
       z-index: 1;
 
+      &:hover {
+        transform: translateY(-0.1em);
+      }
+
       img {
         @include dimensions(100%, 100%);
       }
