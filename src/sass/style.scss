@@ -315,8 +315,8 @@ body {
 
     .free-consultation-button {
       background-color: rgba(255, 255, 255, 0);
-      border: 1px solid $white;
-      border-radius: 0.1em;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 2px;
       display: inline-block;
       padding: 1em;
       position: relative;
@@ -329,7 +329,7 @@ body {
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.1);
-        transform: translate(0.03em, 0.03em);
+        transition: background-color 0.3s;
       }
     }
 
