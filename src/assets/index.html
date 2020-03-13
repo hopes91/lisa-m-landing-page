@@ -14,12 +14,24 @@
   <body id="top">
     <div class="container">
       <header>
-        <!-- <nav class="nav nav_top">
-          <a href="#about-me" class="nav__link">Обо мне</a>\
-          <a href="#contact-me" class="nav__link">Контакты</a>
-        </nav> -->
         <div class="logo">
           The company/your name
+        </div>
+        <nav class="nav opened">
+          <a href="#about-me" class="nav-link">Обо мне</a>
+          <a href="#contact-me" class="nav-link">Контакты</a>
+        </nav>
+        <div class="dropdown closed">
+          <div tabindex="-1" class="burger">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu closed">
+            <nav class="drop">
+              <a href="#about-me" tabindex="-1" class="drop-link">Обо мне</a>
+              <a href="#contact-me" tabindex="-1" class="drop-link">Контакты</a>
+            </nav>
+          </div>
         </div>
         <h1 class="title">С Уважением к Вашей Истории и Вашим Финансам</h1>
         <h2 class="what-we-do">
@@ -191,10 +203,6 @@
         <div class="copyright">
           <p>&copy; Your Name, <span class="current-year"></span></p>
         </div>
-        <!-- <nav class="nav nav_bottom">
-          <a href="#about-me" class="nav__link">Обо мне</a>
-          <a href="#contact-me" class="nav__link">Контакты</a>
-        </nav> -->
       </footer>
     </div>
 

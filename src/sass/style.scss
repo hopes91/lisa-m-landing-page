@@ -36,20 +36,13 @@ body {
     border: none;
   }
 
-  // .nav {
-  //   @include dimensions(100%, 4em);
-  //   font-weight: bold;
-  //   text-align: right;
-  //   background-color: $white;
-  //
-  //   .nav__link {
-  //     @include indentations(0, 1.6em 1em);
-  //     font-size: 0.9em;
-  //     line-height: 1.5;
-  //     color: $black;
-  //     text-transform: uppercase;
-  //   }
-  // }
+  .opened {
+    display: inline-block;
+  }
+
+  .closed {
+    display: none;
+  }
 
   .info {
     @include dimensions(auto, 100%);
@@ -118,14 +111,14 @@ body {
     background-color: $black;
     box-sizing: border-box;
     color: $white;
-    padding: 1em;
-    position: relative;
+    padding: 1em 1em 11em 1em;
     text-align: center;
     z-index: 1;
 
     @include respond-to('max-width: 1024px') {
       height: 100vh;
-      min-height: 35em;
+      min-height: 40em;
+      padding: 1em;
     }
 
     a {
@@ -145,14 +138,135 @@ body {
 
     .logo {
       @include dimensions(auto, 12em);
-      left: 1.2em;
-      position: relative;
-      top: 1.2em;
+      display: inline-block;
+      left: 1.5em;
+      position: absolute;
+      top: 2.3em;
+      z-index: 1;
 
       @include respond-to('max-width: 640px') {
         left: 1em;
-        top: 1em;
+        top: 2em;
       }
+    }
+
+    .nav {
+      display: inline-block;
+      position: absolute;
+      right: 1.2em;
+      top: 1.3em;
+
+      @include respond-to('max-width: 640px') {
+        display: none;
+      }
+
+      .nav-link {
+        @include indentations(0, 1.4em);
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 1px;
+        display: inline-block;
+        color: $white;
+        font: {
+          size: 0.9em;
+          weight: bold;
+        }
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          transition: background-color 0.3s;
+        }
+      }
+    }
+
+    .dropdown {
+      @include dimensions(5em, 100%);
+      display: none;
+      left: 0;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+
+      @include respond-to('max-width: 640px') {
+        display: inline-block;
+      }
+
+      .burger {
+        @include dimensions(1em, 2.3em);
+        cursor: pointer;
+        display: inline-block;
+        position: fixed;
+        right: 1.5em;
+        top: 2.5em;
+        z-index: 1;
+
+        @include respond-to('max-width: 640px') {
+          right: 1.3em;
+          top: 2.2em;
+        }
+
+        span {
+          @include dimensions(2px, 100%);
+          background-color: $white;
+          display: block;
+          position: absolute;
+
+          &:first-child {
+            top: 0;
+          }
+
+          &:last-child {
+            bottom: 0;
+          }
+        }
+      }
+
+      .burger-active {
+        span {
+          background-color: $black;
+
+          &:first-child {
+            transform: translateY(4px) rotate(135deg);
+          }
+
+          &:last-child {
+            transform: translateY(-10px) rotate(-135deg);
+          }
+        }
+      }
+
+      .menu {
+        @include dimensions(auto, 100%);
+        padding-top: 5em;
+
+        .drop {
+          @include dimensions(100%, 100%);
+
+          .drop-link {
+            @include dimensions(auto, 100%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid $white;
+            box-sizing: border-box;
+            display: inline-block;
+            color: $black;
+            font: {
+              size: 1.1em;
+              weight: bold;
+            }
+            padding: 1em;
+            text-transform: uppercase;
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.8);
+              transition: all 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    .dropdown-active {
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     .title {
@@ -162,7 +276,7 @@ body {
         weight: normal;
       }
       position: relative;
-      top: 1em;
+      top: 2em;
       white-space: pre;
 
       @include respond-to('max-width: 1024px') {
@@ -171,7 +285,7 @@ body {
 
       @include respond-to('max-width: 480px') {
         font-size: 1.7em;
-        top: 0.7em;
+        top: 2.5em;
       }
     }
 
@@ -181,12 +295,16 @@ body {
         weight: normal;
       }
       position: relative;
-      top: 1.2em;
+      top: 4em;
 
       @include respond-to('max-width: 640px') {
-        font-size: 1.1em;
+        font-size: 1.2em;
         padding: 0 0.5em;
-        top: 1em;
+        top: 4em;
+      }
+
+      @include respond-to('max-width: 480px') {
+        font-size: 1.1em;
       }
 
       span {
@@ -196,18 +314,16 @@ body {
     }
 
     .free-consultation-button {
-      @include indentations(3em 0 2em 0, 1em);
       background-color: rgba(255, 255, 255, 0);
       border: 1px solid $white;
       border-radius: 0.1em;
       display: inline-block;
-
-      @include respond-to('max-width: 800px') {
-        margin-bottom: 1em;
-      }
+      padding: 1em;
+      position: relative;
+      top: 7em;
+      text-transform: uppercase;
 
       @include respond-to('max-width: 640px') {
-        margin-top: 2em;
         padding: 0.7em;
       }
 
@@ -218,6 +334,9 @@ body {
     }
 
     .info-header {
+      position: relative;
+      top: 10em;
+
       @include respond-to('max-width: 1024px') {
         bottom: 1em;
         box-sizing: border-box;
@@ -225,6 +344,7 @@ body {
         left: 0;
         padding: 0 1em;
         position: absolute;
+        top: auto;
       }
 
       @include respond-to('max-width: 640px') {
@@ -233,13 +353,17 @@ body {
       }
 
       .info-section {
-        @include dimensions(auto, 30%);
+        @include dimensions(auto, 32%);
         margin: 1em 0.7em;
         max-width: 25em;
 
         @include respond-to('max-width: 1024px') {
           @include dimensions(2.6em, 32%);
           margin: 1em 0;
+
+          &:hover {
+            transform: scale(1px, 1px);
+          }
         }
 
         @include respond-to('max-width: 640px') {
