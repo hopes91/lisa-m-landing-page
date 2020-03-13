@@ -245,19 +245,20 @@ body {
           .drop-link {
             @include dimensions(auto, 100%);
             background-color: rgba(255, 255, 255, 0.8);
-            border-bottom: 1px solid $white;
+            border-top: 1px solid rgba(0, 0, 0, 0.4);
             box-sizing: border-box;
             display: inline-block;
             color: $black;
-            font: {
-              size: 1.1em;
-              weight: bold;
-            }
+            font-size: 1em;
             padding: 1em;
             text-transform: uppercase;
 
+            &:last-child {
+              border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+            }
+
             &:hover {
-              background-color: rgba(255, 255, 255, 0.8);
+              background-color: $white;
               transition: all 0.3s;
             }
           }
