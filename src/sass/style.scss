@@ -138,13 +138,13 @@ body {
     }
 
     .logo {
-      @include dimensions(2em, 12em);
-      border: 1px solid $white;
-      margin: 0 auto;
+      @include dimensions(auto, 12em);
+      left: 1.2em;
       position: relative;
-      top: 1.5em;
+      top: 1.2em;
 
-      @include respond-to('max-width: 480px') {
+      @include respond-to('max-width: 640px') {
+        left: 1em;
         top: 1em;
       }
     }
@@ -312,10 +312,6 @@ body {
 
         @include respond-to('max-width: 640px') {
           @include indentations(0.5em 0, 0.7em);
-        }
-
-        @include respond-to('max-width: 480px') {
-          padding: 0.7em;
         }
 
         .section-image {
