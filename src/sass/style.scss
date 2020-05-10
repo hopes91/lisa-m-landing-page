@@ -465,8 +465,7 @@ body {
 
       .info-section {
         @include dimensions(auto, 100%);
-        background: rgb(237,237,237);
-        background: radial-gradient(circle, rgba(237,237,237,1) 10%, rgba(222,222,222,1) 90%);
+        background: #dbdbdb;
         box-shadow: 3px 5px 5px #bababa;
         margin: 0.7em 0;
         text-align: center;
