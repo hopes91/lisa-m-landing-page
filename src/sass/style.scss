@@ -171,6 +171,7 @@ body {
           weight: bold;
         }
         text-transform: uppercase;
+        transition: 0.5s;
 
         &:hover {
           background-color: rgba(255, 255, 255, 0.1);
@@ -333,6 +334,7 @@ body {
       position: relative;
       top: 7em;
       text-transform: uppercase;
+      transition: 0.5s;
 
       @include respond-to('max-width: 640px') {
         padding: 0.7em;
@@ -651,6 +653,7 @@ body {
       display: none;
       position: fixed;
       right: 1.2em;
+      transition: 0.7s;
       z-index: 1;
 
       &:hover {
