@@ -293,7 +293,6 @@ body {
 
       @include respond-to('max-width: 640px') {
         font-size: 2em;
-        top: 2.5em;
       }
 
       @include respond-to('max-width: 500px') {
@@ -312,7 +311,7 @@ body {
       @include respond-to('max-width: 640px') {
         font-size: 1.2em;
         padding: 0 0.5em;
-        top: 4em;
+        top: 3em;
       }
 
       @include respond-to('max-width: 480px') {
@@ -338,6 +337,7 @@ body {
 
       @include respond-to('max-width: 640px') {
         padding: 0.7em;
+        top: 4.5em;
       }
 
       &:hover {
