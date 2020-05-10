@@ -16,6 +16,7 @@ body {
     family: 'Inter', sans-serif;
     size: 16px;
   }
+  overflow: hidden;
   position: relative;
 
   header,
@@ -606,7 +607,6 @@ body {
           box-sizing: border-box;
           display: flex;
           justify-content: space-between;
-          position: absolute;
           text-align: center;
         }
       }
@@ -769,6 +769,10 @@ body {
         @include respond-to('max-width: 1024px') {
           left: 0;
         }
+
+        @include respond-to('max-width: 800px') {
+          margin-bottom: 1.3em;
+        }
       }
 
       .section-text {
@@ -776,42 +780,55 @@ body {
         position: absolute;
         right: 0;
         text-align: left;
-        top: 33.5%;
 
         @include respond-to('max-width: 1200px') {
           width: 28em;
         }
 
         @include respond-to('max-width: 1024px') {
-          top: 29.3%;
           width: 21em;
         }
       }
 
       .section-text.it {
         display: none;
+        top: 34%;
+
+        @include respond-to('max-width: 1024px') {
+          top: 31%;
+        }
+      }
+
+      .section-text.ru {
+        top: 36.5%;
+
+        @include respond-to('max-width: 1024px') {
+          top: 34%;
+        }
       }
 
       .section-buttons {
         bottom: 4em;
-        padding-right: 10em;
+        padding-right: 11.5em;
+        position: absolute;
         right: 0;
-        width: 31em;
+        width: 32em;
 
         @include respond-to('max-width: 1200px') {
           bottom: 3em;
           padding-right: 7em;
-          width: 28em;
+          width: 29em;
         }
 
         @include respond-to('max-width: 1024px') {
           bottom: 1em;
-          padding-right: 0;
-          width: 21em;
+          padding-right: 1.3em;
+          width: 22em;
         }
 
         @include respond-to('max-width: 800px') {
-          margin: 3em auto 0 auto;
+          margin: 2em auto 0 auto;
+          padding: 0;
           position: relative;
           width: 25em;
         }
