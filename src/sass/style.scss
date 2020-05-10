@@ -501,7 +501,7 @@ body {
         }
 
         @include respond-to('max-width: 1024px') {
-          width: 47em;
+          width: 45em;
         }
 
         @include respond-to('max-width: 800px') {
@@ -600,7 +600,7 @@ body {
         }
 
         @include respond-to('max-width: 1024px') {
-          top: 23%;
+          top: 16%;
           width: 21em;
         }
       }
@@ -614,6 +614,61 @@ body {
 
         @include respond-to('max-width: 1024px') {
           right: 0;
+        }
+      }
+
+      .section-buttons {
+        align-items: center;
+        bottom: 4em;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        padding: 0 1em;
+        position: absolute;
+        text-align: center;
+        width: 31em;
+
+        @include respond-to('max-width: 1200px') {
+          bottom: 3em;
+          width: 28em;
+        }
+
+        @include respond-to('max-width: 1024px') {
+          bottom: 1em;
+          width: 21em;
+        }
+
+        @include respond-to('max-width: 800px') {
+          margin: 3em auto 0 auto;
+          position: relative;
+          width: 25em;
+        }
+
+        @include respond-to('max-width: 640px') {
+          width: 85%;
+        }
+
+        @include respond-to('max-width: 500px') {
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 13em;
+        }
+
+        a {
+          color: $black;
+          font-weight: bold;
+          padding: 1em;
+
+          @include respond-to('max-width: 1024px') {
+            padding: 0.5em;
+          }
+
+          @include respond-to('max-width: 500px') {
+            &:first-child {
+              margin-bottom: 1em;
+            }
+          }
         }
       }
     }
