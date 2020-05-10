@@ -1,11 +1,11 @@
 const manageTitleSize = () => {
   const title = document.querySelector('header .title');
 
+  window.innerWidth <= 500 ?
+    title.textContent = `С уважением\r\nк Вашей истории,\r\nфинансам\r\nи безопасности` :
   window.innerWidth <= 800 ?
-    title.textContent = `С Уважением \r\nк Вашей Истории \r\nи Вашим Финансам`:
-  window.innerWidth <= 1350 ?
-    title.textContent = `С Уважением \r\nк Вашей Истории и Вашим Финансам`:
-    title.textContent = 'С Уважением к Вашей Истории и Вашим Финансам';
+    title.textContent = `С уважением\r\nк Вашей истории,\r\nфинансам и безопасности` :
+    title.textContent = `С уважением к Вашей истории,\r\nфинансам и безопасности`;
 };
 
 window.addEventListener('load', manageTitleSize);
