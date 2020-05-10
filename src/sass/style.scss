@@ -391,7 +391,7 @@ body {
         max-width: 25em;
 
         @include respond-to('max-width: 1024px') {
-          @include dimensions(2.6em, 32%);
+          height: 2.6em;
           margin: 1em 0;
         }
 
@@ -750,12 +750,13 @@ body {
         left: 35em;
 
         @include respond-to('max-width: 1024px') {
-          left: 23.5em;
+          left: 23.5em !important;
         }
       }
 
       .section-image {
         left: 6em;
+        position: absolute;
 
         @include respond-to('max-width: 1200px') {
           left: 3em;
@@ -768,9 +769,10 @@ body {
 
       .section-text {
         @include dimensions(auto, 31em);
+        position: absolute;
         right: 0;
         text-align: left;
-        top: 32.5%;
+        top: 33.5%;
 
         @include respond-to('max-width: 1200px') {
           width: 28em;
