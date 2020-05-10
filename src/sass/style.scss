@@ -553,7 +553,7 @@ body {
           }
         }
 
-        span {
+        .vertical-line {
           @include dimensions(22em, 2px);
           background-color: $black;
           bottom: 0;
@@ -583,6 +583,43 @@ body {
           img {
             @include dimensions(100%, auto);
             box-shadow: 3px 3px 3px #bababa;
+          }
+        }
+
+        .section-buttons {
+          align-items: center;
+          bottom: 4em;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          text-align: center;
+          width: 31em;
+
+          @include respond-to('max-width: 1200px') {
+            bottom: 3em;
+            width: 28em;
+          }
+
+          @include respond-to('max-width: 1024px') {
+            bottom: 1em;
+            width: 21em;
+          }
+
+          @include respond-to('max-width: 800px') {
+            margin: 3em auto 0 auto;
+            position: relative;
+            width: 25em;
+          }
+
+          @include respond-to('max-width: 640px') {
+            width: 85%;
+          }
+
+          @include respond-to('max-width: 500px') {
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 13em;
           }
         }
       }
@@ -618,51 +655,17 @@ body {
       }
 
       .section-buttons {
-        align-items: center;
-        bottom: 4em;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
         left: 0;
-        padding: 0 1em;
-        position: absolute;
-        text-align: center;
-        width: 31em;
+        padding-left: 0.8em;
 
         @include respond-to('max-width: 1200px') {
-          bottom: 3em;
-          width: 28em;
-        }
-
-        @include respond-to('max-width: 1024px') {
-          bottom: 1em;
-          width: 21em;
-        }
-
-        @include respond-to('max-width: 800px') {
-          margin: 3em auto 0 auto;
-          position: relative;
-          width: 25em;
-        }
-
-        @include respond-to('max-width: 640px') {
-          width: 85%;
-        }
-
-        @include respond-to('max-width: 500px') {
-          flex-wrap: wrap;
-          justify-content: center;
-          width: 13em;
+          padding: 0;
         }
 
         a {
           color: $black;
           font-weight: bold;
-          padding: 1em;
-
-          @include respond-to('max-width: 1024px') {
-            padding: 0.5em;
-          }
+          padding: 0.7em;
 
           @include respond-to('max-width: 500px') {
             &:first-child {
@@ -690,14 +693,46 @@ body {
         @include dimensions(auto, 31em);
         right: 0;
         text-align: left;
-        top: 47%;
+        top: 32.5%;
 
         @include respond-to('max-width: 1200px') {
           width: 28em;
         }
 
         @include respond-to('max-width: 1024px') {
+          top: 29.3%;
           width: 21em;
+        }
+      }
+
+      .section-text.it {
+        display: none;
+      }
+
+      .section-buttons {
+        padding-right: 10em;
+        right: 0;
+
+        @include respond-to('max-width: 1200px') {
+          padding-right: 7em;
+        }
+
+        @include respond-to('max-width: 1024px') {
+          padding-right: 0;
+        }
+
+        span {
+          cursor: pointer;
+          font-weight: bold;
+          padding: 0.7em;
+
+          @include respond-to('max-width: 500px') {
+            width: 100%;
+
+            &:first-child {
+              margin-bottom: 1em;
+            }
+          }
         }
       }
     }
