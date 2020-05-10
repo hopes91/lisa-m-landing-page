@@ -526,6 +526,10 @@ body {
           @include indentations(0, 0.5em 1em 0.3em 1em);
           font-size: 2em;
           text-align: center;
+
+          @include respond-to('max-width: 800px') {
+            font-size: 1.5em;
+          }
         }
 
         hr {
@@ -735,6 +739,41 @@ body {
             }
           }
         }
+      }
+    }
+
+    .projects {
+      text-align: center;
+
+      .subsection-title {
+        @include indentations(0, 0.5em);
+        font-size: 1.5em;
+
+        @include respond-to('max-width: 800px') {
+          font-size: 1.3em;
+        }
+      }
+
+      div {
+        margin-bottom: 1.7em;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      h5 {
+        font-size: 1.2em;
+        margin: 1em 0.5em 0.5em 0.5em;
+      }
+
+      h6 {
+        font-size: 1.15em;
+        margin: 0.7em 0.5em 0.5em 0.5em;
+      }
+
+      a {
+        color: $black;
       }
     }
 
