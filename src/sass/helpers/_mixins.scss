@@ -30,4 +30,7 @@
   @else if $media == 'max-width: 480px' {
     @media (max-width: 480px) { @content; }
   }
+  @else if $media == 'max-width: 370px' {
+    @media (max-width: 370px) { @content; }
+  }
 }
