@@ -644,26 +644,6 @@ background: linear-gradient(90deg, rgba(205,205,205,1) 0%, rgba(200,200,200,1) 2
           top: 0;
           width: 100%;
         }
-
-        .quote.one {
-          span {
-            display: inline-block;
-            font: {
-              size: 2em;
-              style: italic;
-            }
-            padding-bottom: 0.5em;
-
-            @include respond-to('max-width: 1024px') {
-              font-size: 1.5em;
-            }
-
-            @include respond-to('max-width: 800px') {
-              font-size: 1.3em;
-              padding-bottom: 0.3em;
-            }
-          }
-        }
       }
 
       .section-text.two {
@@ -677,6 +657,29 @@ background: linear-gradient(90deg, rgba(205,205,205,1) 0%, rgba(200,200,200,1) 2
         @include respond-to('max-width: 800px') {
           top: 0;
           width: 100%;
+        }
+      }
+
+      .quote {
+        span {
+          font-style: italic;
+        }
+      }
+
+      .quote.one {
+        span {
+          display: inline-block;
+          font-size: 2em;
+          padding-bottom: 0.5em;
+
+          @include respond-to('max-width: 1024px') {
+            font-size: 1.5em;
+          }
+
+          @include respond-to('max-width: 800px') {
+            font-size: 1.1em;
+            padding-bottom: 0.3em;
+          }
         }
       }
 
