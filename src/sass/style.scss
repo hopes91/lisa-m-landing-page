@@ -826,6 +826,13 @@ body {
         @include respond-to('max-width: 1024px') {
           width: 21em;
         }
+
+        a {
+          color: inherit;
+          display: inline-block;
+          font-size: 1.1em;
+          margin: 0 0 1em 0;
+        }
       }
 
       .section-text.it {
