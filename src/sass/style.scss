@@ -366,6 +366,10 @@ body {
       }
 
       @include respond-to('max-width: 480px') {
+        top: 4em;
+      }
+
+      @include respond-to('max-width: 350px') {
         top: 3.3em;
       }
 
