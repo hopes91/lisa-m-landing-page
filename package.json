@@ -1,8 +1,8 @@
 {
-  "name": "lisa-m-landing-page",
+  "name": "lvm-consulting",
   "version": "1.0.0",
   "main": "script.js",
-  "repository": "git@github.com:hopes91/lisa-m-landing-page.git",
+  "repository": "git@github.com:hopes91/lvm-consulting.git",
   "author": "Nadya Falaleeva <nadezhdafalaleeva@gmail.com>",
   "license": "MIT",
   "private": false,
