@@ -41,7 +41,7 @@ const toggleBurger = event => {
   const dropMenu = event.currentTarget.nextElementSibling;
 
   dropMenu.className.match('closed') ?
-    burger.className = 'burger burger-active' :
+    burger.className = 'burger burger_active' :
     burger.className = 'burger';
 
   toggleDropMenu(dropMenu);
@@ -49,7 +49,7 @@ const toggleBurger = event => {
 
 const toggleDropMenu = dropMenu => {
   if (dropMenu.className.match('closed')) {
-    dropMenu.parentElement.className = 'dropdown dropdown-active opened';
+    dropMenu.parentElement.className = 'dropdown dropdown_active opened';
     dropMenu.querySelectorAll('.drop-link').forEach(link => link.setAttribute('tabindex', '0'));
     dropMenu.className = 'menu opened';
   } else if (dropMenu.className.match('opened')) {

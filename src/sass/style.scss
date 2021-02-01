@@ -253,7 +253,7 @@ body {
         }
       }
 
-      .burger-active {
+      .burger_active {
         span {
           background-color: $black;
 
@@ -303,7 +303,7 @@ body {
       }
     }
 
-    .dropdown-active {
+    .dropdown_active {
       background-color: rgba(255, 255, 255, 0.85);
     }
 
@@ -521,13 +521,13 @@ body {
       }
     }
 
-    .info-section {
+    .personal-info {
       @include indentations(0, 1em);
       box-sizing: border-box;
       position: relative;
       width: 100%;
 
-      .section-content {
+      .personal-content {
         @include dimensions(100%, 70em);
         margin: 0 auto;
         position: relative;
@@ -545,7 +545,7 @@ body {
           width: 100%;
         }
 
-        .section-title {
+        .personal-title {
           @include indentations(0, 0.5em 1em 0.3em 1em);
           font-size: 2em;
           text-align: center;
@@ -573,10 +573,6 @@ body {
           position: relative;
           top: 7.5em;
 
-          @include respond-to('max-width: 1200px') {
-            left: 30em;
-          }
-
           @include respond-to('max-width: 1024px') {
             top: 5em;
           }
@@ -586,7 +582,7 @@ body {
           }
         }
 
-        .section-text {
+        .personal-text {
           display: inline-block;
 
           @include respond-to('max-width: 800px') {
@@ -606,7 +602,7 @@ body {
           }
         }
 
-        .section-image {
+        .personal-image {
           display: inline-block;
           height: 600px;
 
@@ -628,7 +624,7 @@ body {
           }
         }
 
-        .section-buttons {
+        .personal-buttons {
           align-items: center;
           box-sizing: border-box;
           display: flex;
@@ -642,12 +638,16 @@ body {
       .vertical-line {
         left: 36em;
 
+        @include respond-to('max-width: 1200px') {
+          left: 30em;
+        }
+
         @include respond-to('max-width: 1024px') {
-          left: 24.5em !important;
+          left: 24.5em;
         }
       }
 
-      .section-text.one {
+      .personal-text.one {
         @include dimensions(auto, 33em);
         position: absolute;
         text-align: right;
@@ -672,7 +672,7 @@ body {
         }
       }
 
-      .section-text.two {
+      .personal-text.two {
         position: relative;
         top: 17em;
 
@@ -709,7 +709,7 @@ body {
         }
       }
 
-      .section-image {
+      .personal-image {
         position: absolute;
         right: 6em;
 
@@ -722,7 +722,7 @@ body {
         }
       }
 
-      .section-buttons {
+      .personal-buttons {
         bottom: 1em;
         box-sizing: border-box;
         padding: 0 10em;
@@ -771,7 +771,7 @@ body {
     .projects {
       text-align: center;
 
-      .subsection-title {
+      h4 {
         @include indentations(0, 0.5em);
         font-size: 1.5em;
 
@@ -821,12 +821,16 @@ body {
       .vertical-line {
         left: 35em;
 
+        @include respond-to('max-width: 1200px') {
+          left: 30em;
+        }
+
         @include respond-to('max-width: 1024px') {
-          left: 23.5em !important;
+          left: 23.5em;
         }
       }
 
-      .section-image {
+      .personal-image {
         left: 6em;
         position: absolute;
 
@@ -843,7 +847,7 @@ body {
         }
       }
 
-      .section-text {
+      .personal-text {
         @include dimensions(auto, 31em);
         position: absolute;
         right: 0;
@@ -865,7 +869,7 @@ body {
         }
       }
 
-      .section-text.it {
+      .personal-text.it {
         display: none;
         top: 34%;
 
@@ -874,7 +878,7 @@ body {
         }
       }
 
-      .section-text.ru {
+      .personal-text.ru {
         top: 36.5%;
 
         @include respond-to('max-width: 1024px') {
@@ -882,7 +886,7 @@ body {
         }
       }
 
-      .section-buttons {
+      .personal-buttons {
         bottom: 4em;
         padding-right: 11.5em;
         position: absolute;
