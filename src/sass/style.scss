@@ -357,7 +357,7 @@ body {
     .free-consultation-button {
       background-color: rgba(255, 255, 255, 0);
       border: 1px solid rgba(255, 255, 255, 0.5);
-      padding: 0.7em;
+      padding: 0.8em 1em 0.7em 1em;
       position: relative;
       top: 7em;
 
@@ -386,10 +386,6 @@ body {
 
       img {
         width: 30px;
-
-        @include respond-to('max-width: 480px') {
-          margin-bottom: 0.3em;
-        }
       }
     }
 
