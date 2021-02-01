@@ -878,18 +878,29 @@ body {
 
       .personal-text.it {
         display: none;
-        top: 34%;
+        top: 36.6%;
 
         @include respond-to('max-width: 1024px') {
-          top: 31%;
+          top: 34.2%;
         }
       }
 
       .personal-text.ru {
-        top: 36.5%;
+        top: 39.3%;
 
         @include respond-to('max-width: 1024px') {
-          top: 34%;
+          top: 37.7%;
+        }
+      }
+
+      .personal-address {
+        p:first-child {
+          margin-bottom: 0.5em;
+        }
+
+        p:nth-child(2),
+        p:nth-child(3) {
+          margin: 0.2em 0;
         }
       }
 
