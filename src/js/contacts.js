@@ -1,8 +1,8 @@
 const spansToChangeLanguage = document.querySelectorAll('.lang');
 
 const changeLanguage = event => {
-  const contactsInRussian = document.querySelector('.section-text.ru');
-  const contactsInItalian = document.querySelector('.section-text.it');
+  const contactsInRussian = document.querySelector('.personal-text.ru');
+  const contactsInItalian = document.querySelector('.personal-text.it');
 
   if (event.target.id === 'lang-ru') {
     contactsInItalian.style.display = 'none';
