@@ -779,7 +779,7 @@ body {
       text-align: center;
 
       h4 {
-        @include indentations(0, 0.5em);
+        @include indentations(-0.7em 0 0 0, 0.5em);
         font-size: 1.5em;
 
         @include respond-to('max-width: 800px') {
