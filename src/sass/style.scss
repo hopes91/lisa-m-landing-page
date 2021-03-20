@@ -423,6 +423,22 @@ body {
           width: 14.5em;
         }
 
+        &:after {
+          @include dimensions(100%, 101%);
+          background-color: $gray;
+          box-shadow: 1px 1px 1px $gray;
+          content: '';
+          left: -0.5%;
+          opacity: 0.5;
+          position: absolute;
+          top: 0.2%;
+          z-index: -1;
+
+          @include respond-to('max-width: 1024px') {
+            top: 3%;
+          }
+        }
+
         .section-image {
           @include dimensions(auto, 100%);
 
