@@ -228,13 +228,8 @@ body {
         display: inline-block;
         position: fixed;
         right: 1.5em;
-        top: 2.5em;
+        top: 2em;
         z-index: 1;
-
-        @include respond-to('max-width: 640px') {
-          right: 1.3em;
-          top: 2em;
-        }
 
         span {
           @include dimensions(2px, 100%);
@@ -280,7 +275,7 @@ body {
 
           .drop-link {
             @include dimensions(auto, 100%);
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: $light-gray;
             border-top: 1px solid rgba(0, 0, 0, 0.4);
             box-sizing: border-box;
             display: inline-block;
@@ -304,7 +299,7 @@ body {
     }
 
     .dropdown_active {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: $light-gray;
     }
 
     .title {
