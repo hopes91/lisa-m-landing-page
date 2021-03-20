@@ -425,8 +425,8 @@ body {
 
         &:after {
           @include dimensions(100%, 101%);
-          background-color: $gray;
-          box-shadow: 1px 1px 1px $gray;
+          background-color: $dark-gray;
+          box-shadow: 1px 1px 1px $dark-gray;
           content: '';
           left: -0.5%;
           opacity: 0.5;
@@ -491,27 +491,32 @@ body {
 
   main {
     @include dimensions(auto, 100%);
+    box-sizing: border-box;
+    padding: 2em 1em;
 
     .info-main {
+      box-sizing: border-box;
       display: none;
+      flex-direction: column;
 
       @include respond-to('max-width: 1024px') {
-        box-sizing: border-box;
         display: flex;
-        flex-direction: column;
-        padding: 0 0.7em;
       }
 
       .info-section {
         @include dimensions(auto, 100%);
-        background: #dbdbdb;
-        box-shadow: 3px 5px 5px #bababa;
-        margin: 0.7em 0;
+        @include indentations(1em 0, 1.5em);
+        background: $light-gray;
+        box-shadow: 3px 5px 5px $dark-gray;
+        box-sizing: border-box;
         text-align: center;
 
         @include respond-to('max-width: 640px') {
-          @include indentations(0.5em 0, 0.7em);
-          box-sizing: border-box;
+          padding: 1em;
+        }
+
+        @include respond-to('max-width: 480px') {
+          padding: 0.7em;
         }
 
         .section-image {
@@ -533,20 +538,11 @@ body {
             padding: 0;
           }
         }
-
-        &:first-child {
-          margin-top: 2em;
-
-          @include respond-to('max-width: 640px') {
-            margin-top: 1.5em;
-          }
-        }
       }
     }
 
     .personal-info {
-      @include indentations(0, 1em);
-      box-sizing: border-box;
+      padding: 1em 0;
       position: relative;
       width: 100%;
 
@@ -643,7 +639,7 @@ body {
 
           img {
             @include dimensions(100%, auto);
-            box-shadow: 3px 3px 3px #bababa;
+            box-shadow: 3px 3px 3px $dark-gray;
           }
         }
 
@@ -658,6 +654,8 @@ body {
     }
 
     .about-me {
+      padding: 1em 0;
+
       .vertical-line {
         left: 36em;
 
