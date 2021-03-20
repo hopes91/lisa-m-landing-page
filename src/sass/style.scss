@@ -325,7 +325,7 @@ body {
         font-size: 2em;
       }
 
-      @include respond-to('max-width: 500px') {
+      @include respond-to('max-width: 380px') {
         font-size: 1.7em;
       }
     }
