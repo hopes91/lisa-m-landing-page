@@ -9,8 +9,8 @@ body {
 
 .container {
   @include dimensions(auto, 100%);
-  background: rgb(205,205,205);
-  background: linear-gradient(90deg, rgba(205,205,205,1) 0%, rgba(200,200,200,1) 24%, rgba(181,181,181,1) 81%);
+  background: rgb(222,222,222);
+  background: linear-gradient(90deg, rgba(222,222,222,1) 0%, rgba(195,195,195,1) 50%, rgba(190,190,190,1) 100%);
   font: {
     color: $black;
     family: 'Inter', sans-serif;
